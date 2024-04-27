@@ -12,7 +12,7 @@ export default function ChatItems() {
         />
         <ChatItem
           avatar="https://cdn.pixabay.com/photo/2018/09/12/12/14/man-3672010__340.jpg"
-          name="Sumit Saha"
+          name="Test"
           lastMessage="will talk to you later"
           lastTime="10 minutes"
         />

@@ -1,5 +1,12 @@
 {
-  "users": [],
+  "users": [
+    {
+      "email": "mh.web.mehedihassan@gmail.com",
+      "password": "$2a$10$qjK9sZYiDhGnAFEyCIyO0.ED.cYAq7ptKEObnuL//aY3y2gZ2Deby",
+      "name": "mehedi",
+      "id": 1
+    }
+  ],
   "conversations": [
     {
       "id": 1,
