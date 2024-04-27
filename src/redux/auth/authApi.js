@@ -21,8 +21,15 @@ export const authApi = apiSlice.injectEndpoints({
             })
           );
 
-          dispatch(userLoggedIn(result));
-        } catch (err) {}
+          dispatch(
+            userLoggedIn({
+              accessToken: result.data.accessToken,
+              user: result.data.user,
+            })
+          );
+        } catch (err) {
+          // do nothing
+        }
       },
     }),
     login: builder.mutation({
@@ -44,11 +51,18 @@ export const authApi = apiSlice.injectEndpoints({
             })
           );
 
-          dispatch(userLoggedIn(result));
-        } catch (err) {}
+          dispatch(
+            userLoggedIn({
+              accessToken: result.data.accessToken,
+              user: result.data.user,
+            })
+          );
+        } catch (err) {
+          // do nothing
+        }
       },
     }),
   }),
 });
 
-export const { useRegisterMutation, useLoginMutation } = authApi;
+export const { useLoginMutation, useRegisterMutation } = authApi;

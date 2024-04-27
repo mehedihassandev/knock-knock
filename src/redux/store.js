@@ -12,7 +12,7 @@ export const store = configureStore({
     messages: messagesSliceReducer,
   },
 
-  devTools: !process.env.NODE_ENV !== "production",
+  devTools: process.env.NODE_ENV !== "production",
   middleware: (getDefaultMiddleware) =>
     getDefaultMiddleware().concat(apiSlice.middleware),
 });
