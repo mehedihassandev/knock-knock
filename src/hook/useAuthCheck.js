@@ -1,12 +1,12 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
 import { userLoggedIn } from "../redux/auth/authSlice";
 
-const useAuthCheck = () => {
+export const useAuthCheck = () => {
   const dispatch = useDispatch();
   const [authCheck, setAuthCheck] = useState(false);
   useEffect(() => {
-    const token = localStorage?.getItem("token");
+    const token = localStorage?.getItem("auth");
 
     if (token) {
       const auth = JSON.parse(token);

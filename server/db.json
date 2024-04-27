@@ -5,6 +5,12 @@
       "password": "$2a$10$qjK9sZYiDhGnAFEyCIyO0.ED.cYAq7ptKEObnuL//aY3y2gZ2Deby",
       "name": "mehedi",
       "id": 1
+    },
+    {
+      "email": "mehedihassan.dev@gmail.com",
+      "password": "$2a$10$/Kp0Xp8l2M9s/2vIhADcI.wDf44UFAbpMTWCzLM5Lvx55evm6DGuK",
+      "name": "mehedi",
+      "id": 2
     }
   ],
   "conversations": [
