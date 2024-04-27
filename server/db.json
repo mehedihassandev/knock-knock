@@ -3,15 +3,15 @@
   "conversations": [
     {
       "id": 1,
-      "participants": "sumit@learnwithsumit.com-akash@learnwithsumit.com",
+      "participants": "test@gmail.com-akash@gmail.com",
       "users": [
         {
-          "email": "sumit@learnwithsumit.com",
-          "name": "Sumit Saha",
+          "email": "test@gmail.com",
+          "name": "test",
           "id": 1
         },
         {
-          "email": "akash@learnwithsumit.com",
+          "email": "akash@gmail.com",
           "name": "Akash Ahmed",
           "id": 2
         }
@@ -21,15 +21,15 @@
     },
     {
       "id": 2,
-      "participants": "sumit@learnwithsumit.com-saad@learnwithsumit.com",
+      "participants": "test@gmail.com-saad@gmail.com",
       "users": [
         {
-          "email": "sumit@learnwithsumit.com",
-          "name": "Sumit Saha",
+          "email": "test@gmail.com",
+          "name": "test",
           "id": 1
         },
         {
-          "email": "akash@learnwithsumit.com",
+          "email": "akash@gmail.com",
           "name": "Saad Hasan",
           "id": 3
         }
@@ -43,12 +43,12 @@
       "id": 1,
       "conversationId": 1,
       "sender": {
-        "email": "sumit@learnwithsumit.com",
-        "name": "Sumit Saha",
+        "email": "test@gmail.com",
+        "name": "test",
         "id": 1
       },
       "receiver": {
-        "email": "akash@learnwithsumit.com",
+        "email": "akash@gmail.com",
         "name": "Akash Ahmed",
         "id": 2
       },
@@ -59,13 +59,13 @@
       "id": 2,
       "conversationId": 1,
       "sender": {
-        "email": "akash@learnwithsumit.com",
+        "email": "akash@gmail.com",
         "name": "Akash Ahmed",
         "id": 2
       },
       "receiver": {
-        "email": "sumit@learnwithsumit.com",
-        "name": "Sumit Saha",
+        "email": "test@gmail.com",
+        "name": "test",
         "id": 1
       },
       "message": "How are you?",
