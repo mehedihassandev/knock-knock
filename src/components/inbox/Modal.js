@@ -1,36 +1,50 @@
-import {useEffect, useState} from "react";
-import isValidEmail from "../../utils/isValidEmail";
-import {useGetUserQuery} from "../../redux/users/usersApi";
-import Error from "../ui/Error";
-import {useDispatch, useSelector} from "react-redux";
-import {conversationsApi} from "../../redux/conversations/conversationsApi";
+import { useEffect, useState } from 'react';
+import isValidEmail from '../../utils/isValidEmail';
+import { useGetUserQuery } from '../../redux/users/usersApi';
+import Error from '../ui/Error';
+import { useDispatch, useSelector } from 'react-redux';
+import {
+  conversationsApi,
+  useAddConversationMutation,
+  useEditConversationMutation
+} from '../../redux/conversations/conversationsApi';
 
-export default function Modal({open, control}) {
-  const [to, setTo] = useState("");
-  const [message, setMessage] = useState("");
+export default function Modal({ open, control }) {
+  const [to, setTo] = useState('');
+  const [message, setMessage] = useState('');
   const [userCheck, setUserCheck] = useState(false);
   const [responseError, setResponseError] = useState('');
   const [conversation, setConversation] = useState(undefined);
   const dispatch = useDispatch();
 
-  const {user: loggedinUser} = useSelector((state) => state.auth) || {};
-  const {email: myEmail} = loggedinUser || {};
+  const { user: loggedinUser } = useSelector((state) => state.auth) || {};
+  const { email: myEmail } = loggedinUser || {};
 
-  const {data: participant, error} = useGetUserQuery(to, {
-    skip: !userCheck,
-  })
+  const { data: participant, error } = useGetUserQuery(to, {
+    skip: !userCheck
+  });
+
+  const [addConversation, { isSuccess: isAddConversationSuccess }] = useAddConversationMutation();
+  const [editConversation, { isSuccess: isEditConversationSuccess }] = useEditConversationMutation();
+
+
+  useEffect(() => {
+    if (isAddConversationSuccess || isEditConversationSuccess) {
+      control();
+    }
+  }, [isAddConversationSuccess, isEditConversationSuccess]);
 
   useEffect(() => {
     if (participant?.length > 0 && participant[0].email !== myEmail) {
       dispatch(conversationsApi.endpoints.getConversation.initiate({
-        userEmail: myEmail, participantEmail: to,
+        userEmail: myEmail, participantEmail: to
       }))
         .unwrap()
         .then((data) => {
           setConversation(data);
         })
         .catch((err) => {
-          setResponseError("There was a problem!");
+          setResponseError('There was a problem!');
         });
     }
   }, [participant, dispatch, myEmail, to]);
@@ -42,24 +56,41 @@ export default function Modal({open, control}) {
       timeoutId = setTimeout(() => {
         fn(...args);
       }, delay);
-    }
-  }
+    };
+  };
   const doSearch = (value) => {
     if (isValidEmail(value)) {
       setUserCheck(true);
       setTo(value);
     }
-  }
+  };
 
 
   const handleSearch = handleDebounce(doSearch, 500);
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log("From Submited");
-  }
+    if (conversation?.length > 0) {
+      editConversation({
+        id: conversation[0].id, data: {
+          participant: `${myEmail}-${participant[0].email}`,
+          users: [loggedinUser, participant[0]],
+          message,
+          timestamp: new Date().getTime()
+        }
+      });
+    } else if (conversation?.length === 0) {
+      addConversation({
+        participants: `${myEmail}-${participant[0].email}`,
+        users: [loggedinUser, participant[0]],
+        message,
+        timestamp: new Date().getTime(),
+      });
+    }
+    console.log('From Submited');
+  };
 
-  console.log("conversation", conversation);
+  console.log('conversation', conversation);
 
   return (open && (<>
     <div
@@ -72,7 +103,7 @@ export default function Modal({open, control}) {
         Send message
       </h2>
       <form className="mt-8 space-y-6" onSubmit={handleSubmit}>
-        <input type="hidden" name="remember" value="true"/>
+        <input type="hidden" name="remember" value="true" />
         <div className="rounded-md shadow-sm -space-y-px">
           <div>
             <label htmlFor="to" className="sr-only">
@@ -115,12 +146,12 @@ export default function Modal({open, control}) {
           </button>
         </div>
 
-        {participant?.length === 0 && (<Error message="This user does not exist!"/>)}
+        {participant?.length === 0 && (<Error message="This user does not exist!" />)}
 
         {participant?.length > 0 && participant[0].email === myEmail && (
-          <Error message="You can not send message to yourself!"/>)}
+          <Error message="You can not send message to yourself!" />)}
 
-        {responseError && (<Error message={responseError}/>)}
+        {responseError && (<Error message={responseError} />)}
       </form>
     </div>
   </>));
