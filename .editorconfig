@@ -1,0 +1,38 @@
+# EditorConfig is awesome: https://EditorConfig.org
+
+# Top-most EditorConfig file
+root = true
+
+# General settings
+[*]
+indent_style = space
+indent_size = 2
+end_of_line = lf
+charset = utf-8
+insert_final_newline = true
+trim_trailing_whitespace = true
+
+# Markdown files
+[*.md]
+trim_trailing_whitespace = false
+
+# JavaScript files
+[*.js]
+quote_type = single
+trailing_comma = none
+arrow_parens = always
+bracket_spacing = true
+print_width = 80
+semi = true
+
+
+# JSON files
+[*.json]
+indent_size = 2
+
+# Yaml files
+[*.yaml, *.yml]
+indent_size = 2
+
+# Ignore files
+# Add any files or directories you want to ignore here

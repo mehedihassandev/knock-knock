@@ -9,14 +9,14 @@
     {
       "email": "mehedihassan.dev@gmail.com",
       "password": "$2a$10$/Kp0Xp8l2M9s/2vIhADcI.wDf44UFAbpMTWCzLM5Lvx55evm6DGuK",
-      "name": "mehedi",
+      "name": "hassan",
       "id": 2
     }
   ],
   "conversations": [
     {
       "id": 1,
-      "participants": "mh.web.mehedihassan@gmail.com-akash@gmail.com",
+      "participants": "mh.web.mehedihassan@gmail.com-mehedihassan.dev@gmail.com",
       "users": [
         {
           "email": "mh.web.mehedihassan@gmail.com",
@@ -24,8 +24,8 @@
           "id": 1
         },
         {
-          "email": "akash@gmail.com",
-          "name": "Akash Ahmed",
+          "email": "mehedihassan.dev@gmail.com",
+          "name": "hassan",
           "id": 2
         }
       ],
@@ -43,8 +43,8 @@
         "id": 1
       },
       "receiver": {
-        "email": "akash@gmail.com",
-        "name": "Akash Ahmed",
+        "email": "mehedihassan.dev@gmail.com",
+        "name": "hassan",
         "id": 2
       },
       "message": "Hello",
@@ -54,8 +54,8 @@
       "id": 2,
       "conversationId": 1,
       "sender": {
-        "email": "akash@gmail.com",
-        "name": "Akash Ahmed",
+        "email": "mehedihassan.dev@gmail.com",
+        "name": "hassan",
         "id": 2
       },
       "receiver": {
@@ -75,8 +75,8 @@
         "id": 1
       },
       "receiver": {
-        "email": "akash@gmail.com",
-        "name": "Akash Ahmed",
+        "email": "mehedihassan.dev@gmail.com",
+        "name": "hassan",
         "id": 2
       },
       "message": "I am fine",
@@ -86,8 +86,8 @@
       "id": 4,
       "conversationId": 1,
       "sender": {
-        "email": "akash@gmail.com",
-        "name": "Akash Ahmed",
+        "email": "mehedihassan.dev@gmail.com",
+        "name": "hassan",
         "id": 2
       },
       "receiver": {
