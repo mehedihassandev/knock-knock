@@ -72,7 +72,7 @@ export default function Modal({ open, control }) {
     e.preventDefault();
     if (conversation?.length > 0) {
       editConversation({
-        id: conversation[0].id, data: {
+        id: conversation[0].id, sender: myEmail, data: {
           participant: `${myEmail}-${participant[0].email}`,
           users: [loggedinUser, participant[0]],
           message,
@@ -81,16 +81,17 @@ export default function Modal({ open, control }) {
       });
     } else if (conversation?.length === 0) {
       addConversation({
-        participants: `${myEmail}-${participant[0].email}`,
-        users: [loggedinUser, participant[0]],
-        message,
-        timestamp: new Date().getTime(),
+        sender: myEmail,
+        data: {
+          participants: `${myEmail}-${participant[0].email}`,
+          users: [loggedinUser, participant[0]],
+          message,
+          timestamp: new Date().getTime()
+        }
       });
     }
-    console.log('From Submited');
   };
 
-  console.log('conversation', conversation);
 
   return (open && (<>
     <div
