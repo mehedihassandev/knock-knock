@@ -41,10 +41,11 @@ export default function Login() {
 
   const MotionLink = motion(Link);
   return (
-    <div className="grid place-items-center h-screen bg-[#F9FAFB] items-center justify-center">
-      <div className="max-w-md w-full space-y-8">
+    <div className="flex flex-col-1 h-screen bg-[#F9FAFB] items-center justify-center">
+      <div className='w-full bg-custom bg-no-repeat bg-cover h-screen '/>
+      <div className="w-full p-16 flex items-center justify-center flex-col">
         <motion.h1
-          className="mb-8 text-center text-[3rem] font-extrabold uppercase text-violet-500"
+          className="mb-6 text-center text-[3rem] font-extrabold uppercase text-violet-500"
           whileInView={{
             y: [0, -20, 0],
             opacity: 1,
@@ -54,7 +55,7 @@ export default function Login() {
           knock-knock
         </motion.h1>
         <motion.h2
-          className="mt-6 text-center text-3xl font-extrabold text-gray-900"
+          className="text-center text-3xl font-extrabold text-gray-900"
           whileInView={{
             y: [0, 10, 0],
             opacity: 1,
@@ -64,16 +65,14 @@ export default function Login() {
           Sign in to your account
         </motion.h2>
         <motion.form
-          className="mt-8 space-y-6"
+          className="mt-8 space-y-6 w-6/12"
           initial={{y: -30, opacity: 0}}
           whileInView={{y: 0, opacity: 1}}
           transition={{duration: 0.5}}
           onSubmit={handleSubmit}
         >
           <div className="rounded-md shadow-sm -space-y-px">
-            <label htmlFor="email-address" className="sr-only">
-              Email address
-            </label>
+
             <motion.input
               id="email-address"
               name="email"
@@ -86,9 +85,7 @@ export default function Login() {
               value={email}
               onChange={(e) => setEmail(e.target.value)}
             />
-            <label htmlFor="password" className="sr-only">
-              Password
-            </label>
+
 
             <motion.div className="relative">
               <motion.input
@@ -126,7 +123,7 @@ export default function Login() {
           </div>
 
           <motion.div
-            className="flex items-center justify-between text-sm"
+            className="flex items-center justify-end text-sm"
             initial={{x: 150, opacity: 0}}
             whileInView={{
               x: 0,
@@ -140,12 +137,7 @@ export default function Login() {
             >
               Forget password?
             </MotionLink>
-            <MotionLink
-              to="/register"
-              className="font-medium text-violet-600 hover:text-violet-500"
-            >
-              Register
-            </MotionLink>
+
           </motion.div>
 
           <motion.button
@@ -167,7 +159,20 @@ export default function Login() {
 
           {error !== "" && <Error message={error}/>}
         </motion.form>
+        <motion.div className="absolute bottom-0 text-center pb-10" whileInView={{
+          y: 0,
+          opacity: 1,
+          transition: {duration: 0.5, delay: 0.3},
+        }} initial={{y: 30, opacity: 0}} transition={{duration: 0.5}}>
+          <Link
+            to="/register"
+            className="font-semibold"
+          >
+            Don't have an account? <span className="text-violet-600">Register</span>
+          </Link>
+        </motion.div>
       </div>
+
     </div>
   );
 }

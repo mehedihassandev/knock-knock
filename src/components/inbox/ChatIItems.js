@@ -6,6 +6,7 @@ import { Link } from "react-router-dom";
 import moment from "moment";
 import getPartnerInfo from "../../utils/getPertnerInfo";
 import gravatarUrl from "gravatar-url";
+import { motion } from "framer-motion";
 
 export default function ChatItems() {
   const { user } = useSelector((state) => state.auth) || {};
