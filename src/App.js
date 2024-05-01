@@ -1,10 +1,10 @@
-import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import {BrowserRouter as Router, Route, Routes} from "react-router-dom";
 import Conversation from "./pages/Conversation";
 import Inbox from "./pages/Inbox";
 import Login from "./pages/Login";
 import Register from "./pages/Register";
-import { useAuthCheck } from "./hook/useAuthCheck";
-import { PrivateRoute } from "./components/PrivateRoute";
+import {useAuthCheck} from "./hook/useAuthCheck";
+import {PrivateRoute} from "./components/PrivateRoute";
 import PublicRoute from "./components/PublicRoute";
 
 function App() {
@@ -18,7 +18,7 @@ function App() {
           path="/"
           element={
             <PublicRoute>
-              <Login />
+              <Login/>
             </PublicRoute>
           }
         />
@@ -26,7 +26,7 @@ function App() {
           path="/register"
           element={
             <PublicRoute>
-              <Register />
+              <Register/>
             </PublicRoute>
           }
         />
@@ -34,7 +34,7 @@ function App() {
           path="/inbox"
           element={
             <PrivateRoute>
-              <Conversation />
+              <Conversation/>
             </PrivateRoute>
           }
         />
@@ -42,7 +42,7 @@ function App() {
           path="/inbox/:id"
           element={
             <PrivateRoute>
-              <Inbox />
+              <Inbox/>
             </PrivateRoute>
           }
         />
