@@ -6,6 +6,7 @@ import { Link } from "react-router-dom";
 import moment from "moment";
 import getPartnerInfo from "../../utils/getPertnerInfo";
 import gravatarUrl from "gravatar-url";
+import { motion } from "framer-motion";
 
 export default function ChatItems() {
   const { user } = useSelector((state) => state.auth) || {};
@@ -39,7 +40,7 @@ export default function ChatItems() {
         email
       );
       return (
-        <li key={id}>
+        <motion.li key={id}>
           <Link to={`/inbox/${id}`}>
             <ChatItem
               avatar={gravatarUrl(partnerEmail, { size: 50 })}
@@ -48,7 +49,7 @@ export default function ChatItems() {
               lastTime={moment(timestamp).fromNow()}
             />
           </Link>
-        </li>
+        </motion.li>
       );
     });
   }
