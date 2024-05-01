@@ -1,15 +1,15 @@
 // import Blank from "./Blank";
-import { useParams } from "react-router-dom";
+import {useParams} from "react-router-dom";
 import ChatHead from "./ChatHead";
 import Messages from "./Messages";
 import Options from "./Options";
-import { useGetMessagesQuery } from "../../../redux/messages/messagesApi";
+import {useGetMessagesQuery} from "../../../redux/messages/messagesApi";
 import Error from "../../ui/Error";
 
 export default function ChatBody() {
-  const { id } = useParams();
+  const {id} = useParams();
 
-  const { data: messages, isLoading, isError, error } = useGetMessagesQuery(id);
+  const {data: messages, isLoading, isError, error} = useGetMessagesQuery(id);
   // decide what to render
   let content = null;
 
@@ -18,7 +18,7 @@ export default function ChatBody() {
   } else if (!isLoading && isError) {
     content = (
       <div>
-        <Error message={error?.data} />
+        <Error message={error?.data}/>
       </div>
     );
   } else if (!isLoading && !isError && messages?.length === 0) {
@@ -26,9 +26,9 @@ export default function ChatBody() {
   } else if (!isLoading && !isError && messages?.length > 0) {
     content = (
       <>
-        <ChatHead message={messages[0]} />
-        <Messages messages={messages} />
-        <Options />
+        <ChatHead message={messages[0]}/>
+        <Messages messages={messages}/>
+        <Options info={messages[0]}/>
       </>
     );
   }

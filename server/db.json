@@ -21,43 +21,22 @@
   ],
   "conversations": [
     {
-      "participants": "mh.web.mehedihassan@gmail.com-mehedihassan.dev@gmail.com",
+      "participants": "mehedihassan.dev@gmail.com-mh.web.mehedihassan@gmail.com",
       "users": [
-        {
-          "email": "mh.web.mehedihassan@gmail.com",
-          "name": "mehedi",
-          "id": 1
-        },
         {
           "email": "mehedihassan.dev@gmail.com",
-          "password": "$2a$10$/Kp0Xp8l2M9s/2vIhADcI.wDf44UFAbpMTWCzLM5Lvx55evm6DGuK",
           "name": "hassan",
           "id": 2
-        }
-      ],
-      "message": "hello, mehedi",
-      "timestamp": 1714498988069,
-      "id": 1,
-      "participant": "mh.web.mehedihassan@gmail.com-mehedihassan.dev@gmail.com"
-    },
-    {
-      "participants": "mh.web.mehedihassan@gmail.com-mehedi@swordfishtech.co.uk",
-      "users": [
+        },
         {
           "email": "mh.web.mehedihassan@gmail.com",
           "name": "mehedi",
           "id": 1
-        },
-        {
-          "email": "mehedi@swordfishtech.co.uk",
-          "password": "$2a$10$o3AceKksxPvOK89gfoxnxeIkGKoEknTFOmg4oMyVHnCdZAtpekpAW",
-          "name": "mehedi hassan",
-          "id": 3
         }
       ],
-      "message": "hi",
-      "timestamp": 1714480550942,
-      "id": 2
+      "message": "yes",
+      "timestamp": 1714555969503,
+      "id": 1
     }
   ],
   "messages": [
@@ -74,26 +53,9 @@
         "name": "hassan",
         "id": 2
       },
-      "message": "hello",
-      "timestamp": 1714479957305,
+      "message": "hello\n",
+      "timestamp": 1714555924457,
       "id": 1
-    },
-    {
-      "conversationId": 2,
-      "sender": {
-        "email": "mh.web.mehedihassan@gmail.com",
-        "name": "mehedi",
-        "id": 1
-      },
-      "receiver": {
-        "email": "mehedi@swordfishtech.co.uk",
-        "password": "$2a$10$o3AceKksxPvOK89gfoxnxeIkGKoEknTFOmg4oMyVHnCdZAtpekpAW",
-        "name": "mehedi hassan",
-        "id": 3
-      },
-      "message": "hi",
-      "timestamp": 1714480550942,
-      "id": 2
     },
     {
       "conversationId": 1,
@@ -108,8 +70,24 @@
         "name": "hassan",
         "id": 2
       },
-      "message": "hello, mehedi",
-      "timestamp": 1714498988069,
+      "message": "hi again",
+      "timestamp": 1714555943698,
+      "id": 2
+    },
+    {
+      "conversationId": 1,
+      "sender": {
+        "email": "mehedihassan.dev@gmail.com",
+        "name": "hassan",
+        "id": 2
+      },
+      "receiver": {
+        "email": "mh.web.mehedihassan@gmail.com",
+        "name": "mehedi",
+        "id": 1
+      },
+      "message": "yes",
+      "timestamp": 1714555969503,
       "id": 3
     }
   ]
