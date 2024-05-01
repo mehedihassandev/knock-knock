@@ -1,8 +1,8 @@
-import { motion } from "framer-motion";
-import { useEffect, useState } from "react";
-import { FiEye, FiEyeOff } from "react-icons/fi";
-import { Link, useNavigate } from "react-router-dom";
-import { useRegisterMutation } from "../redux/auth/authApi";
+import {motion} from "framer-motion";
+import {useEffect, useState} from "react";
+import {FiEye, FiEyeOff} from "react-icons/fi";
+import {Link, useNavigate} from "react-router-dom";
+import {useRegisterMutation} from "../redux/auth/authApi";
 import Error from "../components/ui/Error";
 
 export default function Register() {
@@ -24,7 +24,7 @@ export default function Register() {
     setShowPassword(!showPassword);
   };
 
-  const [register, { data, isLoading, error: responseError }] =
+  const [register, {data, isLoading, error: responseError}] =
     useRegisterMutation();
 
   const navigate = useNavigate();
@@ -62,7 +62,7 @@ export default function Register() {
             whileInView={{
               y: [0, -20, 0],
               opacity: 1,
-              transition: { duration: 0.4, delay: 0.2 },
+              transition: {duration: 0.4, delay: 0.2},
             }}
           >
             knock-knock
@@ -72,16 +72,16 @@ export default function Register() {
             whileInView={{
               y: [0, 10, 0],
               opacity: 1,
-              transition: { duration: 0.4, delay: 0.5 },
+              transition: {duration: 0.4, delay: 0.5},
             }}
           >
             Create your account
           </motion.h2>
           <motion.form
             className="mt-8 space-y-6"
-            initial={{ y: -30, opacity: 0 }}
-            whileInView={{ y: 0, opacity: 1 }}
-            transition={{ duration: 0.5 }}
+            initial={{y: -30, opacity: 0}}
+            whileInView={{y: 0, opacity: 1}}
+            transition={{duration: 0.5}}
             onSubmit={handleSubmit}
           >
             <div className="rounded-md shadow-sm -space-y-px">
@@ -96,7 +96,7 @@ export default function Register() {
                 required
                 className="appearance-none rounded-none relative block w-full px-3 py-3 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-t-md focus:outline-none focus:ring-violet-500 focus:border-violet-500 focus:z-10 sm:text-sm"
                 placeholder="Name"
-                whileFocus={{ scale: 1.05 }}
+                whileFocus={{scale: 1.05}}
                 value={name}
                 onChange={(e) => setName(e.target.value)}
               />
@@ -112,7 +112,7 @@ export default function Register() {
                 required
                 className="appearance-none rounded-none relative block w-full px-3 py-3 border border-gray-300 placeholder-gray-500 text-gray-900 focus:outline-none focus:ring-violet-500 focus:border-violet-500 focus:z-10 sm:text-sm"
                 placeholder="Email address"
-                whileFocus={{ scale: 1.05 }}
+                whileFocus={{scale: 1.05}}
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
               />
@@ -128,7 +128,7 @@ export default function Register() {
                   required
                   className="appearance-none rounded-none relative block w-full px-3 py-3 border border-gray-300 placeholder-gray-500 text-gray-900 focus:outline-none focus:ring-violet-500 focus:border-violet-500 sm:text-sm focus:z-10"
                   placeholder="Password"
-                  whileFocus={{ scale: 1.05 }}
+                  whileFocus={{scale: 1.05}}
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}
                 />
@@ -136,19 +136,19 @@ export default function Register() {
                   type="button"
                   className="absolute inset-y-0 right-0 px-2 py-2 flex items-center z-20"
                   onClick={togglePasswordVisibility}
-                  initial={{ x: -200, opacity: 0 }}
-                  whileHover={{ scale: 1.2 }}
-                  whileTap={{ scale: 0.9 }}
+                  initial={{x: -200, opacity: 0}}
+                  whileHover={{scale: 1.2}}
+                  whileTap={{scale: 0.9}}
                   whileInView={{
                     x: 0,
                     opacity: 1,
-                    transition: { duration: 0.5 },
+                    transition: {duration: 0.5},
                   }}
                 >
                   {showPassword ? (
-                    <FiEyeOff className="text-violet-800 text-2xl" />
+                    <FiEyeOff className="text-violet-800 text-2xl"/>
                   ) : (
-                    <FiEye className="text-violet-800 text-2xl" />
+                    <FiEye className="text-violet-800 text-2xl"/>
                   )}
                 </motion.button>
               </motion.div>
@@ -164,7 +164,7 @@ export default function Register() {
                   required
                   className="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-b-md focus:outline-none focus:ring-violet-500 focus:border-violet-500 focus:z-10 sm:text-sm"
                   placeholder="Confirm Password"
-                  whileFocus={{ scale: 1.05 }}
+                  whileFocus={{scale: 1.05}}
                   value={confirmPassword}
                   onChange={(e) => setConfirmPassword(e.target.value)}
                 />
@@ -172,13 +172,13 @@ export default function Register() {
                   type="button"
                   className="absolute inset-y-0 right-0 px-2 py-2 flex items-center z-20"
                   onClick={toggleConfirmPasswordVisibility}
-                  whileHover={{ scale: 1.2 }}
-                  whileTap={{ scale: 0.9 }}
+                  whileHover={{scale: 1.2}}
+                  whileTap={{scale: 0.9}}
                 >
                   {showConfirmPassword ? (
-                    <FiEyeOff className="text-violet-800 text-2xl" />
+                    <FiEyeOff className="text-violet-800 text-2xl"/>
                   ) : (
-                    <FiEye className="text-violet-800 text-2xl" />
+                    <FiEye className="text-violet-800 text-2xl"/>
                   )}
                 </motion.button>
               </motion.div>
@@ -186,7 +186,7 @@ export default function Register() {
 
             <motion.div
               className="flex items-center justify-start"
-              initial={{ x: 50, opacity: 0 }}
+              initial={{x: 50, opacity: 0}}
               whileHover={{
                 scale: 1.1,
                 x: "20px",
@@ -194,7 +194,7 @@ export default function Register() {
               whileInView={{
                 x: [0, -20, 0],
                 opacity: 1,
-                transition: { duration: 0.4, delay: 0.2 },
+                transition: {duration: 0.4, delay: 0.2},
               }}
             >
               <motion.input
@@ -202,7 +202,7 @@ export default function Register() {
                 name="acceptTerms"
                 type="checkbox"
                 className="h-4 w-4 text-violet-600 focus:ring-violet-500 border-gray-300 rounded"
-                whileHover={{ scale: 1.3 }}
+                whileHover={{scale: 1.3}}
                 required
                 checked={acceptTerms}
                 onChange={(e) => setAcceptTerms(e.target.checked)}
@@ -246,7 +246,7 @@ export default function Register() {
               animate={{
                 x: [0, 20, 0],
                 opacity: 1,
-                transition: { duration: 0.5, delay: 0.2 },
+                transition: {duration: 0.5, delay: 0.2},
               }}
             >
               <MotionLink
@@ -259,7 +259,7 @@ export default function Register() {
           </motion.form>
           {error !== "" && (
             <motion.div>
-              <Error message={error} />
+              <Error message={error}/>
             </motion.div>
           )}
         </div>
