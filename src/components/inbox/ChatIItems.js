@@ -40,7 +40,7 @@ export default function ChatItems() {
         email
       );
       return (
-        <motion.li key={id}>
+        <li key={id}>
           <Link to={`/inbox/${id}`}>
             <ChatItem
               avatar={gravatarUrl(partnerEmail, { size: 50 })}
@@ -49,7 +49,7 @@ export default function ChatItems() {
               lastTime={moment(timestamp).fromNow()}
             />
           </Link>
-        </motion.li>
+        </li>
       );
     });
   }
