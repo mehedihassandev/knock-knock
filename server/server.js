@@ -10,6 +10,22 @@ const io = require("socket.io")(server);
 global.io = io;
 
 const router = jsonServer.router("db.json");
+
+router.render = (req, res) => {
+  const path = req.path;
+  const method = req.method;
+
+  // Emit a socket event when a new conversation is created
+  if (path.includes("/conversations") && (method === "POST" || method === "PATCH")) {
+    io.emit("conversations", {
+      data: res.locals.data,
+    });
+  }
+  res.json({
+    data: res.locals.data,
+  });
+
+}
 const middlewares = jsonServer.defaults();
 const port = process.env.PORT || 9000;
 
@@ -19,9 +35,9 @@ app.db = router.db;
 app.use(middlewares);
 
 const rules = auth.rewriter({
-    users: 640,
-    conversations: 660,
-    messages: 660,
+  users: 640,
+  conversations: 660,
+  messages: 660,
 });
 
 app.use(rules);
